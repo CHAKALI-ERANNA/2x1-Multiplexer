@@ -1,0 +1,10 @@
+`timescale 1ns / 1ps
+
+module MUX_2x1(I,Y,S
+
+    );
+    input [1:0]I;
+    input S;
+    output Y;
+    assign Y = (S == 0)?I[0]:I[1];
+endmodule

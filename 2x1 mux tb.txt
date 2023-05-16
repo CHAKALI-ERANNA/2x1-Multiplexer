@@ -1,0 +1,24 @@
+`timescale 1ns / 1ps
+
+module MUX_2x1_TB;
+    reg [1:0]I;
+    reg S;
+    wire Y;
+    MUX_2x1 uut(I,Y,S);
+    initial begin
+        S = 0;
+        I[0] = 1;
+        #10;
+         S = 1; 
+        I = 2'b10;
+        #10;
+        I = 2'b01;
+        #10;
+        S = 0;
+        I = 2'b00;
+        #10;
+        S = 1;
+        I = 2'b11;
+        #10 $stop;
+     end
+endmodule
